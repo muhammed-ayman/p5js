@@ -1,8 +1,21 @@
+let arcsNumber = 0;
+let counter = 0;
 
 function setup() {
+  arcsNumber = Math.ceil(random(10,20));
+  createCanvas(600, 600);
+  background(225);
 }
 
 function draw() {
+  if (arcsNumber > 0){
+    noFill();
+    let arcObj = new arc(random(500),random(500), random(-PI/6,PI/4), random(PI/4,PI));
+    arcObj.draw();
+    arcsNumber -= 1;
+  } else{
+    noLoop();
+  }
 }
 
 class arc {
